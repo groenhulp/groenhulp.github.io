@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GroenHulp Dienstverlening</title>
+
+  <!-- Стили -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <header>
+    <img src="img1.png" alt="Logo">
+    <h1>GroenHulp Dienstverlening</h1>
+    <p>Uw tuin, onze zorg</p>
+    <a href="tel:+32470000000" class="call-btn">Bel&nbsp;nu</a>
+  </header>
+
+  <main>
+    <!-- О нас -->
+    <section class="about fade-in">
+      <h2>Over ons</h2>
+      <p>Wij zijn een klein en toegewijd team uit Limburg. We helpen buren, gezinnen en bedrijven hun tuin mooi en verzorgd te houden — betrouwbaar, persoonlijk en met oog voor detail.</p>
+    </section>
+
+    <!-- Услуги -->
+    <section class="diensten fade-in">
+      <h2>Onze diensten</h2>
+      <ul>
+        <li><span class="icon"><img src="img/lawn.svg"     alt=""></span>Gras maaien</li>
+        <li><span class="icon"><img src="img/edge.svg"     alt=""></span>Randen afsnijden</li>
+        <li><span class="icon"><img src="img/weed.svg"     alt=""></span>Onkruid verwijderen</li>
+        <li><span class="icon"><img src="img/pressure.svg" alt=""></span>Tegels reinigen met hogedruk</li>
+      </ul>
+    </section>
+
+    <!-- Отзывы -->
+    <section class="testimonials fade-in">
+      <h2>Ervaringen van klanten</h2>
+      <div class="testimonial">
+        <p>“Heel vriendelijk en professioneel! Mijn tuin is weer prachtig. Ik raad hen aan!”</p>
+        <span>— Anja, Hasselt</span>
+      </div>
+      <div class="testimonial">
+        <p>“Snelle service, scherpe prijs. We bellen zeker opnieuw!”</p>
+        <span>— Tom, Genk</span>
+      </div>
+    </section>
+
+    <!-- Форма Netlify -->
+    <section id="contact-form" class="fade-in">
+      <h2>Laat een bericht achter</h2>
+
+      <!-- Netlify перехватывает форму благодаря data-netlify -->
+      <form id="request-form"
+            name="contact"
+            method="POST"
+            action="/thanks.html"
+            data-netlify="true"
+            netlify-honeypot="bot-field">
+
+
+
+        <input type="hidden" name="form-name" value="contact">
+
+        <input type="hidden" name="redirect" value="/thanks.html">
+
+        <p class="hidden"><label>Bot: <input name="bot-field"></label></p>
+
+        <label for="name">Naam:</label>
+        <input type="text" id="name" name="name" required>
+        <span class="error-message" id="error-name"></span>
+
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" name="email" required>
+        <span class="error-message" id="error-email"></span>
+
+        <label for="phone">Telefoon:</label>
+        <input type="tel" id="phone" name="phone">
+
+        <label for="message">Bericht:</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+        <span class="error-message" id="error-message"></span>
+
+        <button type="submit">Verzenden</button>
+      </form>
+      <p id="form-status"></p>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 GroenHulp. Alle rechten voorbehouden.
+  </footer>
+
+  <!-- Липкая кнопка WhatsApp -->
+  <a href="https://wa.me/32470000000"
+     class="whatsapp-float"
+     target="_blank"
+     aria-label="WhatsApp">
+    <img src="img/whatsapp-svgrepo-com.svg" alt="WhatsApp">
+  </a>
+
+  <script src="script.js"></script>
+</body>
+</html>
