@@ -6,6 +6,7 @@
   <title>GroenHulp Dienstverlening</title>
 
   <!-- Стили -->
+  <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
@@ -56,16 +57,12 @@
       <form id="request-form"
             name="contact"
             method="POST"
-            action="/thanks.html"
+            action="thanks.html"
             data-netlify="true"
             netlify-honeypot="bot-field">
-
-
+            
 
         <input type="hidden" name="form-name" value="contact">
-
-        <input type="hidden" name="redirect" value="/thanks.html">
-
         <p class="hidden"><label>Bot: <input name="bot-field"></label></p>
 
         <label for="name">Naam:</label>
