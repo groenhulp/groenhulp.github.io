@@ -53,36 +53,36 @@
     <section id="contact-form" class="fade-in">
       <h2>Laat een bericht achter</h2>
 
-      <!-- Netlify перехватывает форму благодаря data-netlify -->
-      <form id="request-form"
-            name="contact"
-            method="POST"
-            action="thanks.html"
-            data-netlify="true"
-            netlify-honeypot="bot-field">
-            
 
-        <input type="hidden" name="form-name" value="contact">
-        <p class="hidden"><label>Bot: <input name="bot-field"></label></p>
+      
+      <form action="https://formsubmit.co/groenhulplimburg@gmail.com" method="POST">
+  <!-- Бот-защита (honeypot) -->
+  <input type="text" name="_honey" style="display:none">
 
-        <label for="name">Naam:</label>
-        <input type="text" id="name" name="name" required>
-        <span class="error-message" id="error-name"></span>
+  <!-- Отключаем капчу от Formsubmit -->
+  <input type="hidden" name="_captcha" value="false">
 
-        <label for="email">E-mail:</label>
-        <input type="email" id="email" name="email" required>
-        <span class="error-message" id="error-email"></span>
+  <!-- Переадресация после отправки -->
+  <input type="hidden" name="_next" value="https://groenhulp.github.io/thanks.html">
 
-        <label for="phone">Telefoon:</label>
-        <input type="tel" id="phone" name="phone">
+  <label for="name">Naam:</label>
+  <input type="text" id="name" name="name" required>
 
-        <label for="message">Bericht:</label>
-        <textarea id="message" name="message" rows="4" required></textarea>
-        <span class="error-message" id="error-message"></span>
+  <label for="email">E-mail:</label>
+  <input type="email" id="email" name="email" required>
 
-        <button type="submit">Verzenden</button>
-      </form>
-      <p id="form-status"></p>
+  <label for="phone">Telefoon:</label>
+  <input type="tel" id="phone" name="phone">
+
+  <label for="message">Bericht:</label>
+  <textarea id="message" name="message" rows="4" required></textarea>
+
+  <button type="submit">Verzenden</button>
+</form>
+
+
+
+
     </section>
   </main>
 
