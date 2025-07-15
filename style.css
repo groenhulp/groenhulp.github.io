@@ -91,6 +91,8 @@ section:hover{box-shadow:0 4px 28px rgba(0,0,0,.12)}
   font-weight:600;
   cursor:pointer;
   transition:background .18s,color .18s,box-shadow .18s;
+  -webkit-tap-highlight-color: transparent; /* Android / Chrome */
+  -webkit-tap-highlight-color: rgba(0,0,0,0); /* iOS Safari */
 }
 
 .diensten-buttons button.active{
