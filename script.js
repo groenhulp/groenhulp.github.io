@@ -21,3 +21,25 @@ form.addEventListener('submit', e => {
   if (!form.message.value.trim()) { errMsg.textContent = 'Bericht is verplicht'; e.preventDefault(); }
   // Если ошибок нет — форма отправится, и Netlify сделает редирект
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+  const buttons = document.querySelectorAll('.diensten-buttons button');
+  const bericht = document.querySelector('textarea[name="message"]'); // ← исправили
+
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      btn.classList.toggle('active');
+
+      const selected = Array.from(buttons)
+        .filter(b => b.classList.contains('active'))
+        .map(b => b.dataset.service);
+
+      const extraText = bericht.value.replace(/^Ik wil .+\.\s*/i, '').trim();
+
+      bericht.value = selected.length
+        ? `Ik wil ${selected.join(', ')}.${extraText ? '\n' + extraText : ''}`
+        : extraText;
+    });
+  });
+});
+

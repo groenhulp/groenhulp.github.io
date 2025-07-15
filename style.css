@@ -37,11 +37,50 @@ section{
 section:hover{box-shadow:0 4px 28px rgba(0,0,0,.12)}
 .about{background:#f1fdf2}
 
-/* Услуги */
-.diensten ul{list-style:none;margin-top:22px}
-.diensten li{display:flex;align-items:center;gap:14px;font-size:1.1em;margin-bottom:16px}
-.icon{width:40px;height:40px;display:flex;align-items:center;justify-content:center;background:#b2dfdb55;border-radius:12px}
-.icon img{width:24px;height:24px}
+
+/* Центровка секции с кнопками */
+.diensten-center{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:40px 16px;
+}
+
+/* Кнопки-пилюли */
+.diensten-buttons{
+  display:flex;
+  gap:14px;
+  flex-wrap:wrap;
+  justify-content:center;
+  max-width:850px;
+}
+
+.diensten-buttons button{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  padding:12px 18px;
+  border:2px solid #4caf50;
+  border-radius:28px;
+  background:#fff;
+  color:#388e3c;
+  font-size:1.05em;
+  font-weight:600;
+  cursor:pointer;
+  transition:background .18s,color .18s,box-shadow .18s;
+}
+
+.diensten-buttons button.active{
+  background:#4caf50;
+  color:#fff;
+  box-shadow:0 3px 14px rgba(76,175,80,.15);
+}
+
+.btn-icon{width:24px;height:24px}
+
+
+
+
 
 /* Отзывы */
 .testimonials{background:#f9fdfa}
@@ -85,6 +124,11 @@ section:hover{box-shadow:0 4px 28px rgba(0,0,0,.12)}
 
 /* Адаптив */
 @media(max-width:600px){
+   .diensten-buttons{gap:10px}
+  .diensten-buttons button{
+    flex:1 1 calc(50% - 10px);
+    justify-content:center;
+  }
   header img{height:56px}
   header h1{font-size:1.4rem}
   header{padding:18px 8px 26px}
@@ -93,6 +137,13 @@ section:hover{box-shadow:0 4px 28px rgba(0,0,0,.12)}
   .diensten li{font-size:1em}
   .icon{width:34px;height:34px}.icon img{width:20px}
   .whatsapp-float{width:50px;height:50px;bottom:15px;right:15px}.whatsapp-float img{width:28px}
+  .diensten-buttons {
+    gap: 8px;
+  }
+  .diensten-buttons button {
+    flex: 1 1 calc(50% - 8px);
+    text-align: center;
+  }
 }
 
 /* Футер */
