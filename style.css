@@ -47,6 +47,29 @@ section:hover{box-shadow:0 4px 28px rgba(0,0,0,.12)}
 }
 
 /* Кнопки-пилюли */
+
+/* Заголовок в центре, но со стилем обычного h2 */
+/*
+.diensten-center h2{
+  margin:0;   
+  font-size:1.8rem;    
+  text-align:center;   
+  color:#2e7d32;
+}
+*/
+
+
+/* раньше было flex-row – меняем на колонку */
+.diensten-center{
+  display:flex;
+  flex-direction:column;   /* ← ставим в столбик */
+  align-items:flex-start;      /* заголовок и кнопки по центру */
+  gap:24px;                /* расстояние между заголовком и кнопками */
+  padding:40px 16px;
+}
+
+
+
 .diensten-buttons{
   display:flex;
   gap:14px;
