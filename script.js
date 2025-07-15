@@ -24,7 +24,10 @@ form.addEventListener('submit', e => {
 
 document.addEventListener('DOMContentLoaded', () => {
   const buttons = document.querySelectorAll('.diensten-buttons button');
-  const bericht = document.querySelector('textarea[name="message"]'); // ← исправили
+  const bericht = document.querySelector('textarea[name="message"]');
+
+  // helper: маленькая первая буква
+  const lcFirst = str => str.charAt(0).toLowerCase() + str.slice(1);
 
   buttons.forEach(btn => {
     btn.addEventListener('click', () => {
@@ -32,12 +35,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const selected = Array.from(buttons)
         .filter(b => b.classList.contains('active'))
-        .map(b => b.dataset.service);
+        .map(b => lcFirst(b.dataset.service));   // ← тут lowercase first
 
+      // формируем строку c «en»
+      let dienstenText = '';
+      if (selected.length === 1) {
+        dienstenText = selected[0];
+      } else if (selected.length === 2) {
+        dienstenText = selected.join(' en ');
+      } else if (selected.length > 2) {
+        const last = selected.pop();
+        dienstenText = selected.join(', ') + ' en ' + last;
+      }
+
+      // убираем старое «Ik wil …»:
       const extraText = bericht.value.replace(/^Ik wil .+\.\s*/i, '').trim();
-
-      bericht.value = selected.length
-        ? `Ik wil ${selected.join(', ')}.${extraText ? '\n' + extraText : ''}`
+      bericht.value = dienstenText
+        ? `Ik wil ${dienstenText}.` + (extraText ? '\n' + extraText : '')
         : extraText;
     });
   });

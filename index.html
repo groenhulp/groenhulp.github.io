@@ -77,7 +77,9 @@
 
 
       
-      <form action="https://formsubmit.co/groenhulplimburg@gmail.com" method="POST">
+      <form id="request-form" 
+      action="https://formsubmit.co/groenhulplimburg@gmail.com" 
+      method="POST">
   <!-- Бот-защита (honeypot) -->
   <input type="text" name="_honey" style="display:none">
 
@@ -90,14 +92,23 @@
   <label for="name">Naam:</label>
   <input type="text" id="name" name="name" required>
 
+<span id="error-name"   class="error-message"></span>
+
+
   <label for="email">E-mail:</label>
   <input type="email" id="email" name="email" required>
+
+<span id="error-email"  class="error-message"></span>
+
 
   <label for="phone">Telefoon:</label>
   <input type="tel" id="phone" name="phone">
 
   <label for="message">Bericht:</label>
   <textarea id="message" name="message" rows="4" required></textarea>
+
+<span id="error-message" class="error-message"></span>
+
 
   <button type="submit">Verzenden</button>
 </form>
